@@ -3,7 +3,7 @@ require 'stringio'
 require_relative '../lib/edifact_parser/tokenizer'
 
 module EdifactParser
-  class TestTokenizer < MiniTest::Unit::TestCase
+  class TestTokenizer < Minitest::Test
     [
       ["UNA:+.? 'UNB+ZZ:3'UNH++testing'",
         [
@@ -197,7 +197,11 @@ module EdifactParser
       define_method("test_document_#{document.first[0..20].gsub(" ", '_')}") do
         tok = new_tokenizer(document.first)
         document.last.each do |token|
-          assert_equal token, tok.next_token
+          if token.nil?
+            assert_nil tok.next_token
+          else
+            assert_equal token, tok.next_token
+          end
         end
       end
     end

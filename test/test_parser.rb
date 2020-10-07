@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative '../lib/edifact_parser'
 
 module EdifactParser
-  class TestParser < MiniTest::Unit::TestCase
+  class TestParser < Minitest::Test
     FILES_DIR = File.dirname(__FILE__) + "/files"
 
     def test_separate_lines_file
