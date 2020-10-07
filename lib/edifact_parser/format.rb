@@ -57,7 +57,7 @@ module EdifactParser
     def look_forward_to_separator
       separator_matchers = [component_data_element_selector,
                             data_element_separator,
-                            segment_terminator].join('|')
+                            segment_terminator].join
       "(?=[#{separator_matchers}])"
     end
 

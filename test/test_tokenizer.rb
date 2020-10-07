@@ -22,6 +22,23 @@ module EdifactParser
           nil
         ]
       ],
+      ["UNA:+.? 'UNB+ZZ:3'UNH++test|test'",
+        [
+          [:OPTIONAL_BEGIN, 'UNA:+.? \''],
+          [:QUALIFIER, 'UNB'],
+          [:PLUS, '+'],
+          [:STRING, 'ZZ'],
+          [:COLON, ':'],
+          [:NUMBER, 3],
+          [:SEGMENT_END, "'"],
+          [:QUALIFIER, "UNH"],
+          [:PLUS, '+'],
+          [:PLUS, '+'],
+          [:STRING, "test|test"],
+          [:SEGMENT_END, "'"],
+          nil
+        ]
+      ],
       ["UNA:+.? 'UNB+ZZ:3.5'UNH++testing'",
         [
           [:OPTIONAL_BEGIN, 'UNA:+.? \''],
