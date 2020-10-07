@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative '../lib/edifact_parser'
 
 module EdifactParser
-  class TestHeaderDefinedFormat < MiniTest::Unit::TestCase
+  class TestHeaderDefinedFormat < Minitest::Test
     FILES_DIR = File.dirname(__FILE__) + "/files"
 
     def test_header_defined_format
