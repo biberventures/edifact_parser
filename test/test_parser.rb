@@ -211,7 +211,7 @@ module EdifactParser
     def test_parser_error_thrown
       parser = new_parser("asdjasdpo LULULU 191292**;;")
       assert_raises(EdifactParser::ParseError) do
-        r = parser.parse.result
+        parser.parse.result
       end
     end
 
